@@ -1,12 +1,28 @@
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
-  const router = useRouter();
+export const getServerSideProps: GetServerSideProps = async function ({
+  query,
+}) {
+  const { title, description } = query;
+  return {
+    props: {
+      title,
+      description,
+    },
+  };
+};
 
-  console.log(router.query);
+export default function posts({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,14 +34,11 @@ export default function Home() {
           content="https://next-og-generator.vercel.app"
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={`${router.query.title} | ${router.query.description}.`}
-        />
+        <meta property="og:title" content={`${title} | ${description}.`} />
 
         <meta
           property="og:image"
-          content={`https://next-og-generator.vercel.app/api/og?title=${router.query.title}&description=${router.query.description}`}
+          content={`https://next-og-generator.vercel.app/api/og?title=${title}&description=${description}`}
         />
       </Head>
 
