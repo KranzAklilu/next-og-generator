@@ -12,6 +12,31 @@
   align-items: center;
 }
 
+.og {
+  background-image: url("https://via.placeholder.com/800x418.png?text=+");
+  background-size: cover;
+  position: absolute;
+  width: 800px;
+  height: 418px;
+  border: 1px solid white;
+  position: relative;
+  object-fit: contain;
+}
+.ogTextContainer {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.ogTextContainer > h1 {
+  font-size: 110px;
+  margin-bottom: 10px;
+}
+.ogTextContainer > p {
+  font-size: 24px;
+}
+
 .footer {
   display: flex;
   flex: 1;
