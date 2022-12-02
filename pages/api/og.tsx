@@ -35,8 +35,9 @@ export default function handler(req: NextRequest) {
               height: "100%",
             }}
           >
-            <h1 style={{ fontSize: "110px" }}>{title}</h1>
-            <p style={{ fontSize: "24px" }}>{description}</p>
+            {/* <h1 style={{ fontSize: "110px" }}>{title}</h1>
+            <p style={{ fontSize: "24px" }}>{description}</p> */}
+            ksdjf
           </div>
         </div>
       ),
