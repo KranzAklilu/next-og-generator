@@ -21,7 +21,7 @@ export default function handler(req: NextRequest) {
       (
         <div
           style={{
-            backgroundImage: `url("https://via.placeholder.com/800x418.png?text=+")`,
+            // backgroundImage: `url("https://via.placeholder.com/800x418.png?text=+")`,
             width: 800,
             height: 418,
           }}
@@ -41,8 +41,8 @@ export default function handler(req: NextRequest) {
         </div>
       ),
       {
-        width: 800,
-        height: 418,
+        width: 1200,
+        height: 630,
       }
     );
   } catch (e: any) {
