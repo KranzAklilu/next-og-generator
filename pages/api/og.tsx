@@ -11,61 +11,32 @@ export default function handler(req: NextRequest) {
 
     // ?title=<title>
     const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 100)
-      : "My default title";
+    const hasDescription = searchParams.has("description");
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Koda.";
+    const description = hasDescription
+      ? searchParams.get("description")?.slice(0, 100)
+      : "Join a Community of business owners, techies, artists and aspiring enthusiasts who share their journeys and expertise.";
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: "black",
-            backgroundSize: "150px 150px",
-            height: "100%",
-            width: "100%",
+            backgroundImage: `url("https://via.placeholder.com/800x418.png?text=+")`,
+            width: 800,
+            height: 418,
+            padding: "0 60px",
             display: "flex",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
             flexDirection: "column",
-            flexWrap: "nowrap",
+            justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              justifyItems: "center",
-            }}
-          >
-            <img
-              alt="Vercel"
-              height={200}
-              src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
-              style={{ margin: "0 30px" }}
-              width={232}
-            />
-          </div>
-          <div
-            style={{
-              fontSize: 60,
-              fontStyle: "normal",
-              letterSpacing: "-0.025em",
-              color: "white",
-              marginTop: 30,
-              padding: "0 120px",
-              lineHeight: 1.4,
-              whiteSpace: "pre-wrap",
-            }}
-          >
-            {title}
-          </div>
+          <h1 style={{ fontSize: "110px" }}>{title}</h1>
+          <p style={{ fontSize: "24px" }}>{description}</p>
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 418,
       }
     );
   } catch (e: any) {

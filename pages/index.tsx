@@ -61,15 +61,6 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <div className={styles.og}>
-          <div className={styles.ogTextContainer}>
-            <h1 className={styles.header}>Koda.</h1>
-            <p>
-              Join a Community of business owners, techies, artists and aspiring
-              enthusiasts who share their journeys and expertise.
-            </p>
-          </div>
-        </div>
         <div
           style={{
             backgroundImage: `url("https://via.placeholder.com/800x418.png?text=+")`,
